@@ -1,0 +1,21 @@
+repos:
+  - repo: https://github.com/asottile/pyupgrade
+    rev: v2.14.0
+    hooks:
+      - id: pyupgrade
+        args: ["--py38-plus"]
+  - repo: https://github.com/asottile/reorder_python_imports
+    rev: v2.5.0
+    hooks:
+      - id: reorder-python-imports
+        args: ["--application-directories", "src"]
+  - repo: https://github.com/psf/black
+    rev: 21.4b2 # Replace by any tag/version: https://github.com/psf/black/tags
+    hooks:
+      - id: black
+        language_version: python3 # Should be a command that runs python3.6+
+  - repo: https://gitlab.com/PyCQA/flake8
+    rev: 3.9.1
+    hooks:
+      - id: flake8
+        args: [--max-line-length=112] # black doesn't format long strings

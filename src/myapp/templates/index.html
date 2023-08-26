@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load custom_filters %}
+{% load custom_tags %}
+
+{% block 'content' %}
+<div class="flex items-center justify-center min-h-screen bg-indigo-50">
+    <!-- centered content -->
+  
+    <div class="border text-3xl p-8 bg-white w-96">
+      <h1 class="text-3xl font-bold underline">
+        {{ intro|excerpt }}
+      </h1>
+      <h4>{% current_time '%d-%m-%Y' %}</h4>
+    </div>
+  
+    <!-- end centered content -->
+</div>
+{% endblock %}
